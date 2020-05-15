@@ -1,0 +1,521 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(209, 232, 248);
+    scroll-behavior: smooth;
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 58.4px repeat(3, 1fr) 60px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    grid-area: 1/1/2/9;
+    background-color: rgb(22, 71, 134);
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    width: 100%;
+    z-index: 3;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: rgb(58, 121, 204);
+}
+.header ul a {
+    display: block;
+    padding: 20px;
+    border-right: 1px solid rgb(0, 0, 110);
+    text-decoration: none;
+    color: black;
+}
+
+.header ul a:hover {
+    background-color: #67aeec;
+}
+
+.header .logo {
+    float: left;
+    display: block;
+    font-size: 2em;
+    padding: 10px 20px;
+    color: white;
+}
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  padding: 28px 20px;
+  position: relative; 
+  float: right; 
+  cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+    background: white;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+
+}
+
+.header .menu-icon .nav-icon:before {
+    background: white;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+
+.header .menu-icon .nav-icon:after {
+    background: white;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu{
+    max-height: 360px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top: 0;  
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+@media (min-width: 1000px) {
+    .header li{
+        float: left;
+    }
+
+    .header li a {
+        padding: 20px 30px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon{
+        display: none;
+    }
+}
+
+.active {
+    background: #67aeec;
+    color: black;
+}
+
+main {
+    grid-area: 2/1/5/9;
+}
+
+p {
+    margin: 0;
+}
+
+#reklama {
+    background-color: rgb(248, 225, 148);
+    text-align: center;
+    height: 420px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#reklamaCont {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+#reklama2 {
+    width: 100%;
+}
+
+.obsah {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 90%;
+    max-width: 1300px;
+    height: auto;
+} 
+
+footer {
+    grid-area: 6/1/7/9;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+}
+
+footer img {
+    width: 65px;
+    height: 50px;
+}
+
+.prod-karta {
+    background: rgb(165, 201, 228);
+    padding: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    transition: transform .2s;
+}
+
+.prod-karta:hover {
+    transform: scale(1.02);
+}
+
+.prod-karta img {
+    float: left;
+    max-width: 400px;
+    width: 80%;
+    height: auto;
+    margin-right: 20px;
+}
+
+.prod-karta p {
+    margin-top: 50px;
+}
+
+#divFarba a {
+    color: black;
+}
+
+.clear {
+    clear: both;
+}
+
+@media only screen and (max-width: 1200px) {
+    .prod-karta img {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .prod-karta p {
+        margin-left: 20px;
+    }
+}
+
+#onas {
+    width: 50%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+#mapa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#mapCont {
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    padding-top: 46.25%;
+}
+
+#kosikdiv {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 80%;
+    height: auto;
+    background-color: rgb(226, 244, 255);
+}
+
+@media only screen and (max-width: 900px) {
+    .nazovProd {
+        position: absolute;
+        bottom: 10px;
+        left: 100px;
+    }
+
+    .produktKos {
+        position: relative;
+        height: 150px;
+    }
+
+    .produktKos img {
+        position: absolute;
+        bottom: 40px;
+        left: 10px;
+    }
+}
+
+#kosikdiv h1 {
+    background-color: rgb(187, 225, 247);
+    font-size: 20px;
+    margin-top: 0;
+    padding: 15px;
+}
+
+#kosikdiv h2 {
+    font-size: 18px;
+    display: inline-block;
+    text-align: right;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.produktKos {
+    background-color: white;
+    margin: 15px;
+    padding: 15px;
+}
+
+.produktKos h3 {
+    display: inline-block;
+    padding: 15px;
+    margin-left: 25px;
+}
+
+.produktKos img {
+    margin-bottom: -30px;
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+#dost1 {
+    color: rgb(23, 151, 23);
+}
+
+.cena {
+    color: rgb(150, 6, 6);
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+.zlava {
+    text-decoration: line-through;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.prodinfo {
+    background-color: rgb(226, 244, 255);
+    max-width: 600px;
+    width: 80%;
+    height: auto;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.produktImg {
+    max-width: 400px;
+    width: 80%;
+    height: auto;
+}
+
+.velkostD {
+    background-color: rgb(63, 194, 129);
+    border: none;
+    width: 80px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.56);
+}
+
+.velkostN {
+    background-color: rgb(211, 72, 72);
+    border: none;
+    width: 80px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.56);
+}
+
+.knt {
+    font-size: 18px;
+}
+
+.dombtn {
+    margin-top: 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(46, 69, 172);
+    padding: 15px;
+    
+    color: white;
+    cursor: pointer;
+}
+
+.dombtn:hover {
+    background-color: rgb(69, 89, 182);
+}
+
+hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: 1.5px solid rgb(59, 57, 57);
+}
+
+.why {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(165, 201, 228);
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+.whyIcon {
+    font-size: 30px;
+    color: rgb(33, 50, 99);
+    margin-right: 20px;
+}
+
+#divFarba h2 {
+    color: rgb(34, 33, 117);
+}
+
+.price {
+    color: rgb(150, 6, 6);
+    font-size: 25px;
+}
+
+.kosikbtn {
+    width: 180px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(230, 16, 16);
+    border: none;
+    color: white;
+    font-size: 16px;
+    box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.56);
+    cursor: pointer;
+    position: absolute;
+    top: 155px;
+    left: 160px;
+}
+
+.kosikbtn:hover {
+    background-color: rgb(201, 33, 33);
+}
+
+table {
+    border-collapse: collapse;
+    width: 30%;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #a6d1e6;
+  }
+
+  .container {
+      max-width: 900px;
+      width: 80%;
+      height: auto;
+      display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  #sitemap a {
+      color: black;
+      background-color: rgb(43, 112, 216);
+      padding: 10px;
+      box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.56);
+  }
+
+  #sitemap li {
+      margin-top: 30px;
+  }
+
+  .container ul {
+      list-style: none;
+  }
+
+  #podstranky a {
+      background-color: rgb(85, 167, 221);
+  }
+
+  #podprodukty a {
+    background-color: rgb(148, 195, 226)
+  }
+
+  #domov {
+      font-size: 22px;
+  }
+
+  @media print {
+      .produktKos img {
+          display: none;
+      }
+
+      footer {
+          display: none;
+      }
+
+      .prod-karta img {
+          display: none;
+      }
+  }
