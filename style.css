@@ -264,6 +264,7 @@ footer img {
     float: left;
     margin-top: 30px;
     margin-bottom: 30px;
+    border: none;
 }
 
 #mapCont {
@@ -392,7 +393,6 @@ footer img {
 
 .dombtn {
     margin-top: 15px;
-    border: none;
     border-radius: 25px;
     background-color: rgb(46, 69, 172);
     padding: 15px;
@@ -441,7 +441,6 @@ hr {
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: rgb(230, 16, 16);
-    border: none;
     color: white;
     font-size: 16px;
     box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.56);
@@ -449,6 +448,7 @@ hr {
     position: absolute;
     top: 155px;
     left: 160px;
+    text-align: center;
 }
 
 .kosikbtn:hover {
